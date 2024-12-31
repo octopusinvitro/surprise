@@ -1,0 +1,94 @@
+/* Layout styles  */
+
+.site-nav,
+.social-media {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+
+    max-width: 20rem;
+    margin: 1rem auto;
+}
+
+.site-nav {
+    justify-content: space-between;
+    text-align: center;
+    font-family: var(--fancy-font);
+    text-transform: uppercase;
+}
+
+.site-logo {
+    display: inline;
+    border-radius: 50%;
+}
+
+.social-media {
+    padding: 0;
+    justify-content: space-between;
+}
+
+.logo {
+    display: inline-block;
+    width: 2rem;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 3rem;
+
+    /* Rainbow gradient / animation inspired by Ana Tudor */
+    background: linear-gradient(45deg,
+            transparent 16.667%,
+            #e16541 0 33.333%,
+            #f18f43 0 50%,
+            #8b9862 0 66.666%,
+            #476098 0 83.333%,
+            #a7489b 0) 0/ 80% no-repeat #ca4246;
+
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill: transparent;
+
+    /* delay for hover out */
+    transition: .2s .2s;
+    /* page load animation */
+    animation: enter .37s
+}
+
+.site-title:hover {
+    background-position: 100%;
+    /* reset delay for hover over */
+    transition-delay: 0s
+}
+
+@keyframes enter {
+
+    0%,
+    40% {
+        background-position: 100%
+    }
+}
+
+.site-footer {
+    max-width: var(--site-width);
+    margin: auto auto 0;
+    padding: 2rem 0;
+    font-size: .95rem;
+    text-align: center;
+    border-top: 1px dashed var(--secondary-color);
+}
+
+.copyright {
+    padding: 1rem 0;
+}
+
+@media only screen and (min-width: 35rem) {
+    .site-nav li {
+        flex: 1 1 0px;
+        width: 0;
+    }
+}

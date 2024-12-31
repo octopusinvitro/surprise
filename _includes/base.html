@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Personal site of {{ author }}">
+        <title>{{ title | escape }} :: {{ author }}'s site</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Silkscreen:wght@400;700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
+        {% css %}{% include 'css/style.liquid' %}{% endcss %}
+
+        <meta property="og:title" content="{{ title | escape }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ baseURL }}{{ page.url }}">
+        <meta property="og:image" content="{{ baseURL }}/img/avatar.jpg">
+        <meta property="og:image:width" content="1000">
+        <meta property="og:image:height" content="1000">
+
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="apple-touch-icon" href="/apple-touch-icon-iphone-60x60.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-ipad-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-iphone-retina-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-ipad-retina-152x152.png">
+    </head>
+
+    <body>
+        <a class="visually-hidden" href="#main-content">Skip to main content</a>
+
+        <header role="banner">
+            <nav aria-label="Main">
+                <ul role="list" class="site-nav">
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/">
+                        <img class="site-logo" src="/apple-touch-icon-iphone-60x60.png" width="60" height="60" style="--logo-size: 60px" alt="Site logo, Phil's avatar, click here to go home">
+                    </a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        {{ content }}
+
+        <footer class="site-footer">
+            <div>
+                <ul class="social-media">
+                    <li><a class="logo" href="https://bsky.app/profile/pjd.me.uk">{% include 'icons/logo-bluesky.svg' %}</a></li>
+                    <li><a class="logo" href="https://www.instagram.com/downerphilip/">{% include 'icons/logo-instagram.svg' %}</a></li>
+                    <li><a class="logo" href="https://www.linkedin.com/in/philip-downer-4519013/">{% include 'icons/logo-linkedin.svg' %}</a></li>
+                    <li><a class="logo" href="https://orcid.org/0000-0002-6665-2437">{% include 'icons/logo-orcid.svg' %}</a></li>
+                    <li><a class="logo" href="https://github.com/pjdowner">{% include 'icons/logo-github.svg' %}</a></li>
+                    <li><a class="logo" href="https://twitter.com/pjdowner">{% include 'icons/logo-twitter.svg' %}</a></li>
+                </ul>
+            </div>
+
+            <div>Built with <a href="https://www.11ty.dev">Eleventy</a> and hosted on <a href="https://github.com">Github</a>. Code by <a href="https://bsky.app/profile/octopusinvitro.bsky.social">{{ webmaster }}</a>.</div>
+
+            <div class="copyright">&copy; {{ author }} 2024–Today. <strong>All rights reserved.</strong></div>
+        </footer>
+
+        <script type="module" src="{% getBundleFileUrl 'js' %}"></script>
+    </body>
+
+</html>

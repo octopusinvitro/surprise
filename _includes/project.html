@@ -1,0 +1,21 @@
+---
+layout: base.html
+---
+{% css %}{% include 'css/_project.css' %}{% endcss %}
+
+<main id="main-content">
+
+    <article>
+        {% assign project = page %}
+
+        <header class="project-header">
+            <div style="background: url({% include '_heroSRC.html' %}) center; background-size: cover; height: 200px"></div>
+            <h2 class="site-title">{{ title | escape }}</h2>
+        </header>
+
+        <section class="project-content">
+            {{ content }}
+        </section>
+    </article>
+
+</main>

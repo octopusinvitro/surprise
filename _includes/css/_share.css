@@ -1,0 +1,18 @@
+/* Share styles */
+
+.share {
+    list-style: none;
+
+    max-width: var(--site-width);
+    margin: auto;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--site-corners);
+}

@@ -1,0 +1,16 @@
+        {% css %}{% include 'css/_share.css' %}{% endcss %}
+
+        <h4>Liked it? Please share it!</h4>
+
+        {% assign fullURL = page.url | prepend: baseURL | url_encode %}
+        {% assign etitle = title | url_encode %}
+        {% assign ehandle = handle | prepend: '@' | url_encode %}
+        {% assign eauthor = author | url_encode %}
+
+        <ul class="share">
+            <li><a target="_blank" rel="noopener" href="mailto:?subject={{ etitle }}+by+{{ eauthor }}&amp;body={{ fullURL }}">Email</a></li>
+            <li><a target="_blank" rel="noopener" href="https://bsky.app/intent/compose?text={{ etitle }}+by+{{ ehandle }}+{{ fullURL }}+">Bluesky</a></li>
+            <li><a target="_blank" rel="noopener" href="https://toot.kytta.dev/?text={{ title }} by {{ author }} {{ fullURL }}">Mastodon</a></li>
+            <li><a target="_blank" rel="noopener" href="https://www.linkedin.com/feed/?shareActive=true&text={{ fullURL }}">LinkedIn</a></li>
+            <li><a target="_blank" rel="noopener" href="https://twitter.com/intent/tweet/?text={{ etitle }}+by+{{ eauthor }}&amp;url={{ fullURL }}&amp;via=pjdowner&amp;hashtags=">Twitter</a></li>
+        </ul>

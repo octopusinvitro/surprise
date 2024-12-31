@@ -1,0 +1,38 @@
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+    font-family: var(--monospace-font);
+    background: var(--secondary-color);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: var(--text-color);
+}
+
+.token.attr-value,
+.token.char,
+.token.regex,
+.token.string,
+.token.variable {
+    color: var(--link-color);
+}
+
+.token.boolean,
+.token.function,
+.token.number {
+    color: var(--accent-color);
+}
+
+.token.entity,
+.token.operator,
+.token.url {
+    color: var(--link-color);
+}
+
+/* .token.atrule,
+.token.builtin,
+.token.important,
+.token.keyword,
+.token.selector {
+    color: var(--accent-color);
+} */

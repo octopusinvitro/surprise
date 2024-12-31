@@ -1,0 +1,28 @@
+{
+  "name": "phd.me.uk",
+  "version": "1.0.0",
+  "description": "Personal site of Phil Downer",
+  "type": "module",
+  "scripts": {
+    "test": "test",
+    "build:dev": "rm -rf _site && npx @11ty/eleventy",
+    "serve:dev": "rm -rf _site && npx @11ty/eleventy --serve",
+    "build:prod": "ENVIRONMENT=production npx @11ty/eleventy",
+    "serve:prod": "ENVIRONMENT=production npx @11ty/eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pjdowner/pjdowner.github.io"
+  },
+  "keywords": [
+    "tech",
+    "guitar",
+    "skating",
+    "eleventy"
+  ],
+  "author": "Octopus in Vitro",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

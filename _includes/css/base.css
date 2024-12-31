@@ -1,0 +1,402 @@
+/* Styles for the whole site.
+ * Mobile first with progressive enhancement.
+ * This is a mix of HTML5 boilerplate and
+ * Josh Comeau reset, plus custom styles.
+ */
+
+:root {
+    --main-color: #1c2c3c;
+    --secondary-color: #38505a;
+    --accent-color: #f43169;
+    --text-color: #f2dac2;
+    --link-color: #91f0ec;
+
+    --main-font: 'Open Sans', serif;
+    --fancy-font: 'Silkscreen', serif;
+    --monospace-font: 'Source Code Pro', serif;
+
+    --site-width: 45rem;
+    --site-corners: .3rem;
+
+    --blockquote-left-space: 6rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+
+    --hex-color: #203245;
+    background:
+        radial-gradient(circle farthest-side at 0% 50%, var(--main-color) 23.5%, transparent 0)21px 30px,
+        radial-gradient(circle farthest-side at 0% 50%, var(--hex-color) 24%, transparent 0)19px 30px,
+        linear-gradient(var(--main-color) 14%, transparent 0, transparent 85%, var(--main-color) 0)0 0,
+        linear-gradient(150deg, var(--main-color) 24%, var(--hex-color) 0, var(--hex-color) 26%, transparent 0, transparent 74%, var(--hex-color) 0, var(--hex-color) 76%, var(--main-color) 0)0 0,
+        linear-gradient(30deg, var(--main-color) 24%, var(--hex-color) 0, var(--hex-color) 26%, transparent 0, transparent 74%, var(--hex-color) 0, var(--hex-color) 76%, var(--main-color) 0)0 0,
+        linear-gradient(90deg, var(--hex-color) 2%, var(--main-color) 0, var(--main-color) 98%, var(--hex-color) 0%)0 0 var(--main-color);
+    background-size: 40px 60px;
+}
+
+body {
+    margin: 0;
+    padding: 0 1rem;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--main-font);
+    font-size: 16pt;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: 'wdth' 100;
+    color: var(--text-color);
+}
+
+p {
+    text-wrap: pretty;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    font-family: var(--fancy-font);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--accent-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+pre,
+code {
+    font-family: var(--monospace-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    white-space: pre-wrap;
+
+    background: var(--secondary-color);
+    border-radius: var(--site-corners);
+}
+
+pre {
+    padding: 1rem;
+    margin: .5rem 0;
+    overflow: auto;
+}
+
+dt {
+    font-weight: bold;
+    font-family: var(--monospace-font);
+}
+
+canvas,
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+    border-radius: var(--site-corners);
+}
+
+iframe {
+    border: 0;
+}
+
+blockquote {
+    position: relative;
+    margin: auto 1rem auto var(--blockquote-left-space);
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+blockquote::before {
+    content: '';
+
+    display: block;
+    height: 100%;
+    width: var(--blockquote-left-space);
+
+    position: absolute;
+    top: 0;
+    left: calc(-1 * var(--blockquote-left-space));
+
+    background: url('/img/quote-left.svg') no-repeat .5rem -.4rem;
+    border-left: .25rem solid var(--accent-color)
+}
+
+fieldset {
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--site-corners);
+}
+
+legend {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    font-variant: small-caps;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: .1rem;
+}
+
+label:focus-within {
+    font-weight: bold;
+}
+
+button,
+input,
+select,
+textarea {
+    width: 100%;
+    margin: 0;
+    padding: .5rem .7rem;
+
+    font: inherit;
+    color: inherit;
+    background: var(--secondary-color);
+
+    outline: 0;
+    border: 0;
+    border-radius: var(--site-corners);
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+
+button:hover,
+input:hover,
+select:hover,
+textarea:hover {
+    outline: 1px solid var(--link-color);
+    background: var(--main-color);
+}
+
+textarea {
+    resize: vertical;
+}
+
+select {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.select-wrapper {
+    position: relative;
+    display: block;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    padding: .5rem;
+    color: var(--main-color);
+    pointer-events: none;
+}
+
+.select-wrapper:focus::after,
+.select-wrapper:hover::after {
+    color: var(--link-color);
+}
+
+
+[type="checkbox"]+label,
+[type="radio"]+label {
+    cursor: pointer
+}
+
+[type="checkbox"]+label::before,
+[type="radio"]+label::before {
+    content: '';
+
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+
+    border: solid 1px var(--secondary-color);
+}
+
+[type="radio"]+label::before {
+    border-radius: 50%;
+}
+
+[type="checkbox"]:checked+label::before,
+[type="radio"]:checked+label::before {
+    background: var(--secondary-color);
+}
+
+button,
+[type="reset"],
+[type="submit"] {
+    width: auto;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.site-title::selection,
+::selection {
+    color: var(--main-color);
+    background: var(--text-color);
+    text-shadow: none;
+}
+
+.site-title::selection {
+    -webkit-text-fill-color: var(--main-color);
+}
+
+table {
+    width: 100%;
+
+    font-family: var(--monospace-font);
+    font-size: .9rem;
+    border-collapse: collapse;
+}
+
+thead {
+    background: var(--secondary-color);
+}
+
+tr {
+    border-bottom: 1px solid var(--secondary-color)
+}
+
+td,
+th {
+    padding: .5rem 1rem;
+}
+
+abbr,
+acronym {
+    font-variant: small-caps;
+    cursor: help;
+}
+
+/* --------------------- Range styles ----------------------------- */
+
+[type=range] {
+    margin-top: 5rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+[type=range]::-webkit-slider-runnable-track,
+[type=range]::-moz-range-track,
+
+[type=range]::-webkit-slider-thumb,
+[type=range]::-moz-range-thumb,
+
+[type=range]::-moz-range-progress,
+[type=range] {
+    height: .5rem;
+    -webkit-appearance: none;
+}
+
+[type=range]::-webkit-slider-thumb,
+[type=range]::-moz-range-thumb {
+    height: var(2rem);
+    width: var(2rem);
+    background: var(--link-color);
+    border: none;
+    border-radius: 50%;
+}
+
+[type=range][disabled]::-webkit-slider-thumb,
+[type=range][disabled]::-moz-range-thumb {
+    background: var(--secondary-color);
+}
+
+[type=range]::-webkit-slider-runnable-track,
+[type=range]::-moz-range-track {
+    width: 100%;
+    background: var(--secondary-color);
+    border: var(--secondary-color);
+    border-radius: var(--site-corners);
+    cursor: pointer;
+}
+
+[type=range]::-moz-range-progress {
+    background: var(--link-color);
+    border-radius: var(--site-corners);
+}
+
+[type=range][disabled]::-moz-range-progress,
+[type=range][disabled] {
+    background: var(--secondary-color);
+}
+
+[type=range][disabled]+output {
+    background: none;
+}
+
+.range {
+    position: relative;
+}
+
+.range output {
+    position: absolute;
+    top: 1rem;
+    left: calc(var(--value)*1% + var(--value)*-.35px);
+
+    height: 2.6rem;
+    width: 2.6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    background: var(--secondary-color);
+
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: none;
+}

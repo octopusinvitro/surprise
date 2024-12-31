@@ -1,0 +1,24 @@
+---
+layout: base.html
+title: Projects
+---
+{% css %}{% include 'css/_project.css' %}{% endcss %}
+
+<main id="main-content" class="projects-index">
+
+    <header>
+        <h1 class="site-title">⚙️ {{ title }}</h1>
+    </header>
+
+    <section>
+    {% for project in collections.projects %}
+        <article class="project-entry">
+            {% assign hero = project.data.hero %}
+            <img src="{% include '_heroSRC.html' %}" width="{{ hero.width }}" height="{{ hero.height }}">
+            <h2><a href="{{ project.url }}">{{ project.data.title }}</a></h2>
+            <p>{{ project.data.summary }} </p>
+        </article>
+    {% endfor %}
+    </section>
+
+</main>

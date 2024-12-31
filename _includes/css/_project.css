@@ -1,0 +1,44 @@
+/* Styles for the projects page */
+
+/* ------------------ Project index ---------------- */
+
+.projects-index {
+    max-width: 45rem;
+    margin: auto;
+}
+
+@media only screen and (min-width: 35rem) {
+    .project-entry {
+        padding: 1rem 0;
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 0 1rem;
+        align-content: flex-start;
+
+    }
+
+    .project-entry h2 {
+        margin: 0;
+    }
+
+    .project-entry img {
+        grid-row: span 2;
+    }
+}
+
+/* ------------------ Project page ----------------- */
+
+.project-header {
+    text-align: center;
+    border: 1ps solid red
+}
+
+.project-content {
+    max-width: var(--site-width);
+    margin: 0 auto;
+}
+
+.project-content iframe {
+    width: 100%;
+}

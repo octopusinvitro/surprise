@@ -1,0 +1,20 @@
+/* Home page's specific styles */
+
+.home-index {
+    max-width: var(--site-width);
+    margin: auto auto 2rem;
+}
+
+.avatar {
+    max-width: 20rem;
+    margin: 0 auto;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+@media only screen and (min-width: 45rem) {
+    .home-index {
+        display: flex;
+        align-items: center;
+        gap: 0 2rem;
+    }
+}

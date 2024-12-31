@@ -1,0 +1,29 @@
+---
+layout: base.html
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag | slugify }}/
+---
+{% css %}{% include 'css/_post.css' %}{% endcss %}
+
+<main id="main-content" class="tag-index">
+
+    <header>
+        <h1 class="site-title">🏷️ Tagged: {{ tag }}</h1>
+    </header>
+
+    <section>
+    {% assign posts = collections[ tag ] %}
+    {% for post in posts | reverse %}
+        <article class="blog-entry">
+            {% assign postDate = page.date | date: '%Y-%m-%d' %}
+            <time class="post-date" datetime={{ postDate }}>{{ postDate }}</time>
+            <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            <p>{{ post.data.summary }}</p>
+        </article>
+    {% endfor %}
+    </section>
+
+</main>

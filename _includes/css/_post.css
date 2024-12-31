@@ -1,0 +1,154 @@
+/* Styles for the blog posts */
+
+/* ------------------ Tag index ---------------- */
+
+.tag-index {
+    max-width: var(--site-width);
+    margin: auto;
+}
+
+/* ------------------ Blog index ---------------- */
+.blog-index {
+    max-width: 45rem;
+    margin: auto;
+}
+
+.blog-entry {
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.blog-entry:last-child {
+    border: 0;
+}
+
+.blog-entry h2 {
+    margin: 0;
+}
+
+.tags {
+    padding: 0;
+    list-style: none;
+    font-family: var(--monospace-font);
+}
+
+.tags li {
+    padding-bottom: 1em
+}
+
+@media only screen and (min-width: 50rem) {
+    .blog-index {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .blog-index section {
+        width: var(--site-width);
+    }
+
+    .blog-index aside {
+        flex: 1;
+        margin-top: 3rem;
+    }
+}
+
+/* ------------------- Post page ---------------- */
+
+.post-header,
+.post-footer {
+    text-align: center;
+}
+
+.post-content,
+.post-comments {
+    max-width: var(--site-width);
+    margin: 0 auto;
+}
+
+.post-date {
+    margin: 1rem 0;
+
+    font-family: var(--monospace-font);
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    --date-color: #466470;
+    color: var(--date-color);
+}
+
+.post-tags {
+    list-style: none;
+
+    max-width: var(--site-width);
+    margin: 1rem auto;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    font-family: var(--monospace-font);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.post-tags li {
+    margin: 0 1rem;
+}
+
+.post-content h1 {
+    font-size: 2.5rem;
+}
+
+.post-content ol,
+.post-content ul {
+    list-style: none;
+    margin-top: 2rem;
+    padding-left: 3rem;
+}
+
+.post-content ol li,
+.post-content ul li {
+    position: relative;
+    padding: 0 0 1rem .5rem;
+}
+
+.post-content ol {
+    counter-reset: line;
+}
+
+.post-content ol li {
+    counter-increment: line;
+}
+
+.post-content ol li::before,
+.post-content ul li::before {
+    position: absolute;
+    top: -.3rem;
+    left: -2rem;
+
+    height: 2rem;
+    width: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    color: var(--text-color);
+
+    background: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.post-content ol li::before {
+    content: counter(line, numeric);
+}
+
+.post-content ul li::before {
+    content: '>';
+}
+
+.post-content img {
+    margin: auto;
+}

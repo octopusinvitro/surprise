@@ -1,0 +1,32 @@
+---
+layout: base.html
+title: Blog
+---
+{% css %}{% include 'css/_post.css' %}{% endcss %}
+
+<main id="main-content" class="blog-index">
+
+    <section>
+        <h1 class="site-title">✍️ {{ title }}</h1>
+
+        {% for post in collections.blog %}
+        <article class="blog-entry">
+            {% assign postDate = post.data.date | date: '%Y-%m-%d' %}
+            <time class="post-date" datetime={{ postDate }}>{{ postDate }}</time>
+            <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            <p>{{ post.data.summary }}</p>
+        </article>
+        {% endfor %}
+    </section>
+
+    <aside>
+        <h3>Blog tags</h3>
+
+        <ul class="tags">
+        {% for tag in collections.tags %}
+            <li>{% include '_tag.html' %}</li>
+        {% endfor %}
+        </ul>
+    </aside>
+
+</main>
