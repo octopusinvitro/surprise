@@ -98,7 +98,9 @@ The site is built and deployed on Github using a Github action.
 
 ## To do
 
-- [ ] Add bluesky comments
+- [x] Add bluesky comments
+  - [ ] Check if some media types are missing
+  - [ ] Unroll links in `record.text` using informtation from `facets`
 - [ ] [Treat images properly with the image plugin](https://www.aleksandrhovhannisyan.com/blog/eleventy-image-plugin/) ([Eleventy docs](https://www.11ty.dev/docs/plugins/image/)).
 - [ ] Minify CSS and SVGs. See [Eleventy asset pipeline](https://mxb.dev/blog/eleventy-asset-pipeline/).
 - [ ] Find a proper social-media icons pack

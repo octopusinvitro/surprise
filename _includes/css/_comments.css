@@ -1,0 +1,120 @@
+/* ------------------- Comments ---------------- */
+
+.post-comments h3 {
+    text-align: center;
+}
+
+.post-comments article {
+    padding: 0 0 1rem;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.comment-header img {
+    border-radius: 50%;
+}
+
+.comment-header h4 {
+    color: var(--link-color);
+}
+
+.comment-header:hover h4 {
+    color: var(--accent-color);
+}
+
+.comment-body,
+.comment-footer {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-family: var(--monospace-font);
+}
+
+.comment-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.comment-footer a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.error,
+.no-comments {
+    position: relative;
+    padding: 1rem;
+    padding-left: 3rem;
+    font-family: var(--monospace-font);
+    font-size: .95rem;
+    font-weight: 900;
+}
+
+.error {
+    color: var(--accent-color);
+    background: #f4cccc;
+    border-radius: var(--site-corners);
+}
+
+.error::before {
+    content: '🚨';
+    position: absolute;
+    left: 1rem;
+}
+
+.no-comments::before {
+    content: '😞';
+    position: absolute;
+    left: 1rem;
+}
+
+/* ------------------- Replies ---------------- */
+
+.replies {
+    position: relative;
+    margin-top: var(--replies-left-space);
+    margin-left: var(--replies-left-space);
+}
+
+.replies::before {
+    content: '';
+
+    display: block;
+    height: 100%;
+    width: var(--replies-left-space);
+
+    position: absolute;
+    top: 0;
+    left: calc(-1 * var(--replies-left-space));
+
+    border-left: .25rem solid var(--secondary-color)
+}
+
+.embeds {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.embed {
+    max-width: 20rem;
+    margin: 1rem auto 0;
+    height: auto;
+}
+
+.embed-link {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--site-corners);
+}

@@ -19,6 +19,7 @@
     --site-corners: .3rem;
 
     --blockquote-left-space: 6rem;
+    --replies-left-space: 1rem;
 }
 
 * {

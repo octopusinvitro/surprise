@@ -35,6 +35,17 @@ layout: base.html
     </article>
 </main>
 
+{% if hascomments %}
+    {% assign commentsId = 'comments-content' %}
+    {% capture blueskyURL %}https://bsky.app/profile/{{ handle }}/post/{{ hascomments }}{% endcapture %}
+    {% js %}{% include 'js/_comments/main.js' %}{% endjs %}
+    {% css %}{% include 'css/_comments.css' %}{% endcss %}
 <section class="post-comments">
-    <h3>Comments</h3>
+    <header>
+        <h3>Comments</h3>
+        <p>Reply on Bluesky <a href="{{ blueskyURL }}" target="_blank" rel="noopener noreferrer">here</a> to join the conversation.</p>
+    </header>
+
+    <div id="{{ commentsId }}"></div>
 </section>
+{% endif %}
